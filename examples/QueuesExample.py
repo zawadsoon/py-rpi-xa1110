@@ -5,14 +5,14 @@ import threading
 
 sys.path.append('../')
 
-from src.SparkFun_XA1110_GPS import SparkFun_XA1110_GPS
+import pyxa1110
 
 framesQueue = queue.Queue()
 runEvent = threading.Event()
 runEvent.set()
 
 def fetchData ():
-    with SparkFun_XA1110_GPS() as gps:
+    with pyxa1110.GPS() as gps:
         while runEvent.is_set():
             gps.receiveData()
             framesQueue.put(gps.ascii())

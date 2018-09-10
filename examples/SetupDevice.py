@@ -4,7 +4,7 @@ import time
 
 sys.path.append('../')
 
-from src.SparkFun_XA1110_GPS import SparkFun_XA1110_GPS
+import pyxa1110
 
 def menuHold ():
     input('\nPress enter to continue')
@@ -18,27 +18,27 @@ version: Get device version,
 exit:    Exit/Quit\n"""
 
 def set1hz ():
-    with SparkFun_XA1110_GPS() as gps:
+    with pyxa1110.GPS() as gps:
         packet = gps.createMTKPacket(220, ",1000")
         gps.sendData(packet) 
 
 def set10hz ():
-    with SparkFun_XA1110_GPS() as gps:
+    with pyxa1110.GPS() as gps:
         packet = gps.createMTKPacket(220, ",100")
         gps.sendData(packet) 
 
 def setNMEAOnlyGAA ():
-    with SparkFun_XA1110_GPS() as gps:
+    with pyxa1110.GPS() as gps:
         packet = gps.createMTKPacket(314, ",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0")
         gps.sendData(packet) 
 
 def setNMEAAll ():
-    with SparkFun_XA1110_GPS() as gps:
+    with pyxa1110.GPS() as gps:
         packet = gps.createMTKPacket(314, ",-1")
         gps.sendData(packet) 
 
 def getVersion ():
-    with SparkFun_XA1110_GPS() as gps:
+    with pyxa1110.GPS() as gps:
         #Send command, request version
         packet = gps.createMTKPacket(605, "")
         gps.sendData(packet)
