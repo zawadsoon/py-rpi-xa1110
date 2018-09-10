@@ -1,9 +1,6 @@
 import os
 import sys
 import time
-
-sys.path.append('../')
-
 import pyxa1110
 
 def menuHold ():

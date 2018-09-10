@@ -1,7 +1,4 @@
 import sys
-
-sys.path.append('../')
-
 import pyxa1110
 
 #This code gets NMEA frames one by one
