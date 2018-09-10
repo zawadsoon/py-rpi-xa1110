@@ -31,8 +31,8 @@ $GPGSA,A,1,,,,,,,,,,,,,,,*1E
 $GLGSA,A,1,,,,,,,,,,,,,,,*02
 $GNRMC
 ```
-#Contribution
+# Contribution
 Do you know whats going on? Can you help? Contribute and send pull-request! Or share some info. Did I something wrong? Tell me I will do it better.
 Any help will be very welcome.
-#License 
+# License 
 This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
