@@ -3,10 +3,10 @@
 from distutils.core import setup
 
 setup(
-    name='py_rpi_xa1110',
-    version='0.2',
+    name='pyxa1110',
+    version='0.3',
     description='A bunch of code to interfecae between RPI and SparkFun XA1110',
     author='Marcin Zawada',
     author_email='zawadsoon@gmail.com',
-    url='https://github.com/zawadsoon/py_rpi_xa1110',
+    url='https://github.com/zawadsoon/pyxa1110',
 )
