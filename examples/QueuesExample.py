@@ -13,15 +13,9 @@ runEvent.set()
 
 def fetchData ():
     with SparkFun_XA1110_GPS() as gps:
-        lastLine = ""
         while runEvent.is_set():
-            time.sleep(0.1)
             gps.receiveData()
-            lines = gps.ascii()
-            lines[0] = lastLine + lines[0]
-            lastLine = lines.pop()
-            for line in lines:
-                framesQueue.put(line)
+            framesQueue.put(gps.ascii())
 
 def flushQueue ():
     while runEvent.is_set():
