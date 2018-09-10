@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
     name='pyxa1110',
-    version='0.5',
+    version='0.6',
     description='A bunch of code to interfecae between RPI and SparkFun XA1110',
     author='Marcin Zawada',
     author_email='zawadsoon@gmail.com',
