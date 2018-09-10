@@ -8,19 +8,22 @@ class SparkFun_XA1110_GPS:
     CHUNK_SIZE = 32
     CHUNKS_COUNT = 8
 
-    def __init__ (self, address = 0x10, bus_number = 1):
+    def __init__ (self, address = 0x10, bus_number = 1, debug = False):
+        self.debug = debug
         self.address = address
         self.bus_number = bus_number
         self.data = [] 
         self.smbus = smbus.SMBus(bus_number)
-        print("Conecting to 0x" + str(format(self.address, '02x')) + " on bus " + str(self.bus_number))
+        if self.debug:
+            print("Conecting to 0x" + str(format(self.address, '02x')) + " on bus " + str(self.bus_number))
 
     def __enter__(self):
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
         self.smbus.close()
-        print("Closing to 0x" + str(format(self.address, '02x')) + " on bus " + str(self.bus_number))
+        if self.debug:
+            print("Closing to 0x" + str(format(self.address, '02x')) + " on bus " + str(self.bus_number))
 
     def receiveData (self, maxPacketSize = None, chunkSize = None):
         """Receive data from GPS device"""
