@@ -2,8 +2,8 @@ import smbus
 import math
 import time
 
-class SparkFun_XA1110_GPS:
-    'Driver for SparkFun GPS Breakout - XA1110 (Qwiic) that uses I2C'
+class GPS:
+    'Firstly this Driver was for SparkFun GPS Breakout - XA1110 (Qwiic) that uses I2C but this should work with other GPS devices with I2C, NMEA, PMTK'
 
     def __init__ (self, address = 0x10, bus_number = 1, debug = False):
         self.debug = debug

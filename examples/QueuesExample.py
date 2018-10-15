@@ -1,10 +1,6 @@
-import sys
 import time
 import queue
 import threading
-
-sys.path.append('../')
-
 import pyxa1110
 
 framesQueue = queue.Queue()

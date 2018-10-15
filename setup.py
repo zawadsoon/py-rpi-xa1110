@@ -9,4 +9,5 @@ setup(
     author='Marcin Zawada',
     author_email='zawadsoon@gmail.com',
     url='https://github.com/zawadsoon/pyxa1110',
+    packages=['pyxa1110']
 )
